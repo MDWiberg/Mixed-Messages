@@ -1,7 +1,7 @@
 const messages = {
   nickName: ['Daredevil', 'Scaredy-Cat', 'Couch-Potato', 'The-Impaler'],
-  secondPart: ['Explore your new personality!','Maybe you should try and hide this new personality.','Don\'t be afraid of your new personality.'],
-  thirdPart: ['ten years','rest of your life','a couple of days'],
+  action: ['Explore your new personality!','Maybe you should try and hide this new personality.','Don\'t be afraid of your new personality.'],
+  timeline: ['ten years','rest of your life','a couple of days'],
 };
 
 const personality = {
@@ -11,11 +11,20 @@ const personality = {
   'The-Impaler': 'extremely violent', 
 };
 
+const randomNum = (num) => {
+  let randNum = Math.floor(Math.random()*num);
+  return randNum;
+};
+
 const generateRandomMessage = () => {
-  let randNumOne = Math.floor(Math.random()*3);
-  let randNumTwo = Math.floor(Math.random()*3);
-  let randNumThree = Math.floor(Math.random()*3);
-  console.log(Messages.firstPart[randNumOne] + Messages.secondPart[randNumTwo] + Messages.thirdPart[randNumThree]);
+let messageContent = [];
+  for(let key in messages) {
+    let keyValue = messages[key];
+    let randIndex = randomNum(keyValue.length);
+    messageContent.push(keyValue[randIndex]);
+  };
+  console.log(messageContent);
+  console.log(`Your new nickname is ${messageContent[0]} and you are now ${personality[messageContent[0]]}.\n${messageContent[1]}\nYou are stuck this way for ${messageContent[2]}.`);
 };
 
 generateRandomMessage();
