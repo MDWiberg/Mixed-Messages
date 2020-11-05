@@ -23,7 +23,6 @@ let messageContent = [];
     let randIndex = randomNum(keyValue.length);
     messageContent.push(keyValue[randIndex]);
   };
-  console.log(messageContent);
   console.log(`Your new nickname is ${messageContent[0]} and you are now ${personality[messageContent[0]]}.\n${messageContent[1]}\nYou are stuck this way for ${messageContent[2]}.`);
 };
 
