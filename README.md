@@ -16,4 +16,4 @@ Project is created with:
 
 	
 ## Status 
-This project is finsihed.
+This project is finished.
